@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Mau ❤️</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url("background.png") center/cover no-repeat;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  padding: 40px 20px;
+  text-align: center;
+  color: #e84c6a;
+}
+
+.page.active {
+  display: block;
+  animation: fadeIn 1s ease;
+}
+
+h1 {
+  font-size: 2.8rem;
+}
+
+.subtext {
+  color: #666;
+  margin-bottom: 30px;
+}
+
+button {
+  padding: 16px 40px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 35px;
+  cursor: pointer;
+  background: #ff4d6d;
+  color: white;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- PAGE 1 ---------- */
+.container { margin-top: 15vh; }
+.buttons { margin-top: 25px; position: relative; height: 90px; }
+.no { background: #f2f2f2; color: #444; }
+.hint { display: none; color: #666; margin-top: 20px; }
+
+/* ---------- PAGE 2 ---------- */
+.message-box {
+  background: rgba(255,255,255,0.9);
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 25px;
+  color: #444;
+  text-align: left;
+}
+
+.signature {
+  margin-top: 20px;
+  color: #ff4d6d;
+  font-size: 1.3rem;
+}
+
+/* ---------- PAGE 3 ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.card { perspective: 1000px; cursor: pointer; }
+.inner {
+  height: 230px;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  position: relative;
+}
+.card.flipped .inner { transform: rotateY(180deg); }
+
+.front, .back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.front img { width: 100%; height: 100%; object-fit: cover; }
+.back {
+  background: #ffedf2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transform: rotateY(180deg);
+}
+
+/* ---------- PAGE 4 ---------- */
+.letter {
+  background: rgba(255,255,255,0.92);
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 40px;
+  border-radius: 30px;
+  color: #555;
+  text-align: left;
+  line-height: 1.7;
+}
+
+.letter .sign {
+  margin-top: 30px;
+  font-size: 1.4rem;
+  color: #ff4d6d;
+}
+
+/* ---------- PAGE 5 ---------- */
+.timeline {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.event {
+  background: rgba(255,255,255,0.92);
+  border-radius: 25px;
+  padding: 25px 30px;
+  margin-bottom: 25px;
+  text-align: left;
+}
+
+.time {
+  color: #ff4d6d;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.event h3 {
+  margin: 5px 0 10px;
+  color: #444;
+}
+
+.event p {
+  color: #666;
+}
+
+.final-note {
+  margin-top: 40px;
+  font-size: 1.4rem;
+  color: #ff4d6d;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <div class="container">
+    <h1>Mau...</h1>
+    <p id="question">Will you be my Valentine? 💕</p>
+    <div class="buttons">
+      <button onclick="goPage2()">Yes 💖</button>
+      <button class="no" id="noBtn" onclick="firstNo()">No 😢</button>
+    </div>
+    <div class="hint" id="hint">
+      The "No" button seems to be running away... maybe it's a sign? 😏
+    </div>
+  </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>🎉 YAYYYY!!!</h1>
+  <p class="subtext">I knew you'd say YES 😍</p>
+  <div class="message-box">
+    <p>You are the <strong>most beautiful woman</strong> in the world and I am so lucky to have you in my life.
+    you are like a shining star that brightens up my darkest days, and I am so grateful to have you by my side.
+    I love you more than words can express.You are angel in disguise, and I am so blessed to have you in my life. Every moment with you is a treasure, and I cherish every memory we create together. 
+    I have lot of things to tell you but you have to wait for it until next. I promise it will be worth the wait.
+    But till valentine can you meet me everyday please please please. I want to see your beautiful face every day and tell you how much I love you. Will make sure i wont going to make you sad and annoyed. 
+    I will do everything to make you happy and smiley. 
+    I want to be the reason behind your smile and the one who wipes away your tears.
+    </p>
+    <p>I love you more than words can express and I can’t wait to spend more time with you.</p>
+
+  
+    <div class="signature">Happy Valentine’s Day, my love ❤️</div>
+  </div>
+  <button onclick="goPage3()">See how beautiful you are 📸</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>You, In Every Frame 📸</h1>
+  <p class="subtext">Tap each photo to reveal how I see you 💖</p>
+  <div class="grid">
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img1.jpeg"></div><div class="back">Your smile lights up my world ❤️</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img2.jpeg"></div><div class="back">You are pure magic ✨</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img3.jpeg"></div><div class="back">Every version of you is perfect 💕</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img4.jpeg"></div><div class="back">Your laughter is my favorite sound 😍</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img5.jpeg"></div><div class="back">You are effortlessly beautiful 💖</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img6.jpeg"></div><div class="back">I see my future in you ❤️</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img7.jpeg"></div><div class="back">You are my everything 💕</div></div></div>
+    <div class="card" onclick="flipCard(this)"><div class="inner"><div class="front"><img src="img8.jpeg"></div><div class="back">My forever starts with you ❤️</div></div></div>
+  </div>
+  <button id="continueBtn" style="display:none;" onclick="goPage4()">Continue to something important 💌</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>🥺</h1>
+  <h1>Before we move on...</h1>
+
+  <div class="letter">
+    <p><strong>My dearest Mau,</strong></p>
+    <p>I’m sorry for every moment I failed you, for not listening enough, and for every tear I caused, for every sadness i have caused to you .</p>
+    <p>You deserve nothing but the best, and I promise to work every day to be the person you deserve. 
+      Because i won't be able to handle that you are going to be with someone so will make sure that i become the best verison that you desrve you are mine and mine only. 
+      You know the secret ❤️</p>
+    <p>Actrually I know i said lot of things that i should said to you and that had made you dissapointed on me and will make sure to never do it again.</p>
+    <p> From now on i will make sure that i listen to you first before talking to you, agree with you on everything because you are more mature than me and will make sure to never make you sad again.</p>
+    <p>I want to be the one who makes you smile every day, who supports you through everything, and who loves you unconditionally. I am committed to being the best partner I can be for you, and to making our relationship stronger every day.</p>
+    <p> I slapped myself today so tighlty because i am not able to improve myself properly.Please forgive me. Stay with me always, my love.</p>
+    <p>I know I have a lot to work on, but I am willing to do whatever it takes to make things right between us. I want to be the person you can rely on, the one who always has your back, and the one who loves you with all their heart.</p>
+    <p>Yaa i confess that i am jelous of your ex and that copper guys but still i am winning that you are my sweet girlfried ❤️</p>
+    <p> I really need your help, and I hope you’ll stay with me—guide me, teach me, and help me grow. Please don’t leave. I know I struggle with acceptance, and it’s hard for me to accept things easily. All my life, people have scolded me, never loved me, and never taught me with softness—they were always harsh. 
+      So please don’t be that way with me. I’m willing to change and improve; I just need patience, kindness, and understanding.</p>
+    <p>I know you want to take space after i dont listen to you pls scold me but dont leave me, something dies in me every time you leave like this.</p>
+    <p>Please forgive me. I love you more than words could ever express. 💝</p>
+    <div class="sign">Forever yours, with all my love ❤️</div>
+  </div>
+
+  <button onclick="goPage5()">Let’s see our day together 📅</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page" id="page5">
+  <h1>Our Valentine’s Day ❤️</h1>
+  <p class="subtext">Here’s what I’ve planned for us, my love </p>
+
+  <div class="timeline">
+    <div class="event">
+      <div class="time">☕ 11:00 AM</div>
+      <h3>Morning Breakfast Date 🥞</h3>
+      <p>Starting our day with breakfast in canteen 😘.</p>
+    </div>
+
+    <div class="event">
+      <div class="time">🌳 12:00 PM</div>
+      <h3>Will drop you home 🌸</h3>
+      <p>Hand in hand, enjoying the beauty of the day together.</p>
+      <p> You take rest till i complete the class and come back for you </p>
+    </div>
+
+    <div class="event">
+      <div class="time">🎁 7:00 PM</div>
+      <h3>Surprise gift ✨</h3>
+      <p>You’ll have to wait and see… trust me, you’ll love it.</p>
+      <p>Cant wait to see you after you get ready you are not less than angel ❤️😘</p>
+    </div>
+
+    <div class="event">
+      <div class="time">🍷 7:30 PM</div>
+      <h3>Romantic Dinner 🕯️</h3>
+      <p>Fine food, soft music, and the most beautiful date.</p>
+    </div>
+
+    <div class="event">
+      <div class="time">🌙 10:00 PM</div>
+      <h3>Stargazing & Cuddles ⭐</h3>
+      <p>Wrapped in a blanket, under the stars — perfect.</p>
+      <p> Ending our day with love and warmth, just the way we like it. </p>
+      <P>Hypothetically but will go to beach spend the night there ❤️</P>
+    </div>
+  </div>
+
+  <div class="final-note">
+    I can’t wait for this day with you 💖 <br>
+    I love you, Mau. Happy Valentine’s Day ❤️
+  </div>
+</div>
+
+<script>
+let noClicked = false;
+let flippedCount = 0;
+
+function firstNo() {
+  if (!noClicked) {
+    noClicked = true;
+    document.getElementById("question").innerText = "Are you sure? 🥺";
+    document.getElementById("hint").style.display = "block";
+    document.getElementById("noBtn").style.position = "absolute";
+  }
+}
+
+document.getElementById("noBtn").addEventListener("mouseover", () => {
+  if (noClicked) {
+    const x = Math.random() * 200 - 100;
+    const y = Math.random() * 60 - 30;
+    noBtn.style.transform = `translate(${x}px, ${y}px)`;
+  }
+});
+
+function flipCard(card) {
+  if (!card.classList.contains("flipped")) {
+    card.classList.add("flipped");
+    flippedCount++;
+    if (flippedCount === 8) {
+      document.getElementById("continueBtn").style.display = "inline-block";
+    }
+  }
+}
+
+function goPage2(){ switchPage("page1","page2"); }
+function goPage3(){ switchPage("page2","page3"); }
+function goPage4(){ switchPage("page3","page4"); }
+function goPage5(){ switchPage("page4","page5"); }
+
+function switchPage(from,to){
+  document.getElementById(from).classList.remove("active");
+  document.getElementById(to).classList.add("active");
+}
+</script>
+
+</body>
+</html>
